@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Konfercab PCNU 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #e8f5e9;
+      -webkit-text-size-adjust: 100%;
+    }
+    .image-navigation {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+      padding: 10px;
+    }
+
+    .nav-button {
+      background: #1b5e20;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.2s ease;
+    }
+
+    .nav-button:hover {
+      background: #2e7d32;
+    }
+
+    .nav-button:disabled {
+      background: #cccccc;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+
+    .page-info {
+      text-align: center;
+      color: #4a4a4a;
+      font-size: 14px;
+      margin: 10px 0;
+      font-weight: 500;
+    }
+
+    @media (max-width: 480px) {
+      .nav-button {
+        padding: 8px 15px;
+        font-size: 13px;
+      }
+      
+      .image-navigation {
+        gap: 10px;
+        padding: 5px;
+      }
+    }
+
+    header {
+      background-color: #1b5e20;
+      color: #fff;
+      padding: 10px 15px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+    
+    header img {
+      height: 40px;
+      display: block;
+      margin: 0 auto 5px auto;
+    }
+    
+    header h1 {
+      font-size: 16px;
+      margin: 0.5em 0;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    header p {
+      font-style: italic;
+      text-align: center;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1b5e20;
+      margin: 120px 0 30px 0;
+      font-size: 24px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        margin: 120px 0 20px 0; /* Fixed margin for mobile */
+        font-size: 22px;
+      }
+    }
+
+    /* Remove this duplicate media query */
+    /* @media (max-width: 480px) {
+      h2 {
+        margin: 80px 0 20px 0;
+        font-size: 18px;
+      }
+    } */
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: #1b5e20;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        margin: 80px 0 20px 0;
+        font-size: 18px;
+      }
+    }
+    .image-container {
+      margin: 20px auto;
+      max-width: 100%; /* Changed from 800px to 100% */
+      padding: 0 15px;
+      margin-bottom: 20px;
+      box-sizing: border-box; /* Added to handle padding properly */
+    }
+
+    .scan-image {
+      width: 100%;
+      max-width: 800px; /* Added max-width for larger screens */
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 480px) {
+      .image-container {
+        padding: 0 10px; /* Reduced padding for mobile */
+      }
+    }
+    /* Remove this duplicate footer style block */
+    /* footer {
+      background-color: #1b5e20;
+      color: #fff;
+      text-align: center;
+      padding: 10px 15px;
+      font-size: 12px;
+      line-height: 1.4;
+      border-top: 2px solid #a5d6a7;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    } */
+
+    /* Keep only this footer style */
+    footer {
+      background-color: #1b5e20;
+      color: #fff;
+      text-align: center;
+      padding: 10px 15px;
+      font-size: 12px;
+      line-height: 1.4;
+      border-top: 2px solid #a5d6a7;
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 14px;
+      }
+      
+      header p {
+        font-size: 12px;
+      }
+      
+      .nav-button {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+      
+      footer {
+        font-size: 11px;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/logo.png" alt="Logo PCNU">
+    <h1>Konfercab PCNU Kotabaru 2025</h1>
+    <p>"Meneguhkan Peran NU Menuju Kotabaru Hebat"</p>
+  </header>
+
+  <h2>Tata Tertib</h2>
+
+  <div class="image-container">
+    <img src="materi/tatib-1.jpg" alt="Tata Tertib Halaman 1" class="scan-image" id="currentImage">
+    <div class="image-navigation">
+      <button class="nav-button" id="prevButton" onclick="previousPage()">Sebelumnya</button>
+      <button class="nav-button" id="nextButton" onclick="nextPage()">Selanjutnya</button>
+    </div>
+    <div class="page-info" id="pageInfo">Halaman 1 dari 8</div>
+  </div>
+
+  <footer>
+    <strong>PENGURUS CABANG NAHDLATUL ULAMA</strong><br>
+    Kabupaten Kotabaru<br>
+    Jl. Mega Indah RT. 07 Ds. Semayap, Komplek Pendidikan Darul Ulum Kotabaru<br>
+    Telp: (+62) 812-5656-8899, (+62) 821-5175-8303<br>
+    Email: <a href="mailto:kotabaru@nu.or.id" style="color: #c8e6c9; text-decoration: none;">kotabaru@nu.or.id</a>
+  </footer>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 8; // Sesuaikan dengan jumlah halaman yang ada
+
+    function updateImage() {
+      const image = document.getElementById('currentImage');
+      image.src = `materi/tatib-${currentPage}.jpg`;
+      document.getElementById('pageInfo').textContent = `Halaman ${currentPage} dari ${totalPages}`;
+      
+      // Update status tombol
+      document.getElementById('prevButton').disabled = currentPage === 1;
+      document.getElementById('nextButton').disabled = currentPage === totalPages;
+    }
+
+    function previousPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        updateImage();
+      }
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages) {
+        currentPage++;
+        updateImage();
+      }
+    }
+
+    // Inisialisasi tampilan awal
+    updateImage();
+  </script>
+</body>
+</html>
+
